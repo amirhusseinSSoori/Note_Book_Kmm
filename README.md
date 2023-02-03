@@ -14,8 +14,12 @@ to share  between Ios and android  also There are many library  for  share both 
 + Koin
 + SqlDelight
 
+## Android
+<img src="/images/android.png" width="300"> 
 
-<img src="/images/android.png" width="300">  <img src="/images/search.png" width="300"> <img src="/images/ios.png" width="300">
+
+## Ios
+<img src="/images/ios.png" width="300">
 
 
 
