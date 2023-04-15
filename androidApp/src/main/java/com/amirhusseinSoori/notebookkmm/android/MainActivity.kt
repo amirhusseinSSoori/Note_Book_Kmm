@@ -3,7 +3,6 @@ package com.amirhusseinSoori.notebookkmm.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,9 +10,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.amirhusseinSoori.notebookkmm.android.note_detail.NoteDetailScreen
 import com.amirhusseinSoori.notebookkmm.android.note_list.NoteListScreen
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

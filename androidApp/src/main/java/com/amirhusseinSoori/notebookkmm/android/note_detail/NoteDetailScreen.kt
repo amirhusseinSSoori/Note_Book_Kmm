@@ -16,14 +16,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun NoteDetailScreen(
     noteId: Long,
     navController: NavController,
-    viewModel: NoteDetailViewModel = hiltViewModel()
+    viewModel: NoteDetailViewModel = koinViewModel()
 ) {
     val state by viewModel.state.collectAsState()
     val hasNoteBeenSaved by viewModel.hasNoteBeenSaved.collectAsState()

@@ -6,13 +6,12 @@ import androidx.lifecycle.viewModelScope
 import com.amirhusseinSoori.notebookkmm.domain.note.Note
 import com.amirhusseinSoori.notebookkmm.domain.note.NoteDataSource
 import com.amirhusseinSoori.notebookkmm.domain.time.DateTimeUtil
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class NoteDetailViewModel @Inject constructor(
+
+
+class NoteDetailViewModel constructor(
     private val noteDataSource: NoteDataSource,
     private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
