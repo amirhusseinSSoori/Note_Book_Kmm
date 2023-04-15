@@ -6,15 +6,15 @@ import androidx.lifecycle.viewModelScope
 import com.amirhusseinSoori.notebookkmm.domain.note.Note
 import com.amirhusseinSoori.notebookkmm.domain.note.NoteDataSource
 import com.amirhusseinSoori.notebookkmm.domain.note.SearchNotes
-import dagger.hilt.android.lifecycle.HiltViewModel
+
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class NoteListViewModel @Inject constructor(
+
+
+class NoteListViewModel  constructor(
     private val noteDataSource: NoteDataSource,
     private val savedStateHandle: SavedStateHandle
 ): ViewModel() {

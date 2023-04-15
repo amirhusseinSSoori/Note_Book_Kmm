@@ -23,15 +23,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import org.koin.androidx.compose.koinViewModel
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun NoteListScreen(
     navController: NavController,
-    viewModel: NoteListViewModel = hiltViewModel()
+    viewModel: NoteListViewModel = koinViewModel()
 ) {
     val state by viewModel.state.collectAsState()
 
