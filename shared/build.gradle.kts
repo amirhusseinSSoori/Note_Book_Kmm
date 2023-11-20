@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("com.squareup.sqldelight")
+    id("app.cash.sqldelight")
 }
 
 kotlin {
@@ -20,8 +20,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("com.squareup.sqldelight:runtime:1.5.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
             }
         }
         val commonTest by getting {
@@ -31,16 +30,16 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("com.squareup.sqldelight:android-driver:1.5.4")
+                implementation("app.cash.sqldelight:android-driver:2.0.0")
             }
         }
-        val androidTest by getting
+//        val androidTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependencies {
-                implementation("com.squareup.sqldelight:native-driver:1.5.4")
+                implementation("app.cash.sqldelight:native-driver:2.0.0")
             }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
@@ -61,17 +60,26 @@ kotlin {
 
 
 sqldelight {
-    database("NoteDatabase") {
-        packageName = "com.amirhusseinSoori.notebookkmm.database"
-        sourceFolders = listOf("sqldelight")
+
+    databases {
+        create("NoteDatabase") {
+            packageName.set("com.amirhusseinSoori.notebookkmm.database")
+        }
     }
 }
 
 android {
     namespace = "com.amirhusseinSoori.notebookkmm"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 24
-        targetSdk = 33
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+
+
 }

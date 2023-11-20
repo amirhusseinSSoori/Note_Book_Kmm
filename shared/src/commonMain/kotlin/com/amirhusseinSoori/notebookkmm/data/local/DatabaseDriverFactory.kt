@@ -1,6 +1,7 @@
 package com.amirhusseinSoori.notebookkmm.data.local
 
-import com.squareup.sqldelight.db.SqlDriver
+import app.cash.sqldelight.db.SqlDriver
+
 
 expect class DatabaseDriverFactory {
     fun createDriver(): SqlDriver

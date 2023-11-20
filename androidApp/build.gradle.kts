@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.amirhusseinSoori.notebookkmm.android"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.amirhusseinSoori.notebookkmm.android"
         minSdk = 24
@@ -22,13 +22,16 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.1"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -38,22 +41,25 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation("androidx.compose.ui:ui:1.4.1")
-    implementation("androidx.compose.ui:ui-tooling:1.4.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.1")
-    implementation("androidx.compose.foundation:foundation:1.4.1")
-    implementation("androidx.compose.material:material:1.4.1")
-    implementation("androidx.activity:activity-compose:1.7.0")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    val composeVersion = "1.5.4"
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
+    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
 
 
+    implementation("androidx.activity:activity-compose:1.8.1")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
 
 
-    implementation ("androidx.navigation:navigation-compose:2.5.3")
-    implementation ("io.insert-koin:koin-android:3.4.0")
-    implementation ("io.insert-koin:koin-androidx-compose:3.4.2")
+
+
+    implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation("io.insert-koin:koin-android:3.5.0")
+    implementation("io.insert-koin:koin-androidx-compose:3.5.0")
 }
 
 
